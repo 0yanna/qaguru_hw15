@@ -4,22 +4,30 @@ import org.aeonbits.owner.Config;
 
 import java.net.URL;
 
+@Config.Sources({"classpath:${Type}.properties"})
 public interface WebDriverConfig extends Config {
 
-    @Key("baseUrl")//читает значение (то что будет передаваться в консоль)
-    @DefaultValue("https://github.com")//если ключ пустой то берет дефелтное
-    String getBaseURL();//конвертирует результат
+    @Key("browserName")//читает значение (то что будет передаваться в консоль)
+    String browserName();//конвертирует результат
 
-    @Key("browser")
-    @DefaultValue("CHROME")
-    Browser getBrowser();
+    @Key("browserVersion")
+    String browserVersion();
 
-    @Key("isRemote")
-    @DefaultValue("false")
-    boolean isRemote();
+    @Key("browserSize")
+    String browserSize();
 
     @Key("remoteUrl")
-    URL getRemoteUrl();
+    String remoteUrl();
+
+    @Key("videoStorage")
+    String videoStorage();
+
+    @Key("timeoutVideoAttach")
+    int timeoutVideoAttach();
+
+    @Key("timeout")
+    int timeout();
+
 }
 //последовательность:
 //добавляем systemProperties в проект (билд гредл)
