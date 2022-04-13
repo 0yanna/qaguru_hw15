@@ -7,13 +7,19 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Properties;
+
 public class DriverConfig {
     public static void configure() {
+        Properties properties = System.getProperties();
+        String system = properties.getProperty("switch");
+        if (system == null) {
+            System.setProperty("switch", "local");
+        }
 
         Configuration.browser = ProjectConfig.webConfig.browserName();
         Configuration.browserVersion = ProjectConfig.webConfig.browserVersion();
         Configuration.browserSize = ProjectConfig.webConfig.browserSize();
-        Configuration.timeout = ProjectConfig.webConfig.timeout();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();

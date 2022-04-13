@@ -15,6 +15,6 @@ public class WebDriverTest extends TestBase{
         open("https://ru.wikipedia.org/");
         $(".vector-search-box-input").setValue("Github").pressEnter();
         $("#bodyContent")
-                .shouldHave(Condition.text("крупнейший[7] веб-сервис для хостинга IT-проектов и их совместной разработки"));
+                .shouldHave(Condition.text("веб-сервис для хостинга IT-проектов и их совместной разработки"));
     }
 }

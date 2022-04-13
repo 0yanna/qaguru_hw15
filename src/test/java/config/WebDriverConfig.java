@@ -8,6 +8,7 @@ import java.net.URL;
 public interface WebDriverConfig extends Config {
 
     @Key("browserName")//читает значение (то что будет передаваться в консоль)
+    @DefaultValue("Chrome")
     String browserName();//конвертирует результат
 
     @Key("browserVersion")

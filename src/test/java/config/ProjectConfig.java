@@ -19,5 +19,8 @@ public class ProjectConfig {
     public static String browserName() {
         return webConfig.browserName();
     }
+    public static String configBrowserSize() {
+        return webConfig.browserSize();
+    }
 
 }
