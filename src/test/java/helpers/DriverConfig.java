@@ -12,9 +12,9 @@ import java.util.Properties;
 public class DriverConfig {
     public static void configure() {
         Properties properties = System.getProperties();
-        String system = properties.getProperty("switch");
+        String system = properties.getProperty("type");
         if (system == null) {
-            System.setProperty("switch", "local");
+            System.setProperty("type", "local");
         }
 
         Configuration.browser = ProjectConfig.webConfig.browserName();
